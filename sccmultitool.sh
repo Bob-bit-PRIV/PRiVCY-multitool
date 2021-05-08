@@ -1,33 +1,38 @@
 #!/bin/bash
 #Coin info
-version="3.1.0"
-coinname=stakecubecoin
-coinnamed=sccd
-coinnamecli=scc-cli
-ticker=SCC
-coindir=scc
-binaries='https://github.com/stakecube/StakeCubeCoin/releases/download/v3.1.0/scc-3.1.0-linux-daemon.zip'
-snapshot='https://github.com/stakecube/StakeCubeCoin/releases/download/v3.1.0/bootstrap.zip'
-port=40000
-rpcport=39999
-discord='https://discord.gg/xxjZzJE'
+version="1.0.0"
+coinname=privcy
+coinnamed=privcyd
+coinnamecli=privcy-cli
+ticker=PRIV
+coindir=privcycore
+binaries='https://github.com/Bob-bit-PRIV/PRiVCY/releases/download/v1.0.0/priv-1.0.0-ubuntu18-daemon.zip'
+snapshot='https://github.com/Bob-bit-PRIV/PRiVCY/releases/download/v1.0.0/bootstrap.zip'
+port=40400
+rpcport=40401
+discord='https://discord.gg/FFUXAanN2p'
 apt-get install pwgen -y &>/dev/null
 pass=`pwgen 14 1 b`
 rpcuser=`pwgen 14 1 b`
 rpcpass=`pwgen 36 1 b`
 
 clear
-cat << "EOF" 
-   _____ _        _         _____      _          
-  / ____| |      | |       / ____|    | |         
- | (___ | |_ __ _| | _____| |    _   _| |__   ___ 
-  \___ \| __/ _` | |/ / _ \ |   | | | | '_ \ / _ \
-  ____) | || (_| |   <  __/ |___| |_| | |_) |  __/
- |_____/ \__\__,_|_|\_\___|\_____\__,_|_.__/ \___|
+cat << "EOF"
+.----------------.  .----------------.  .----------------.  .----------------.  .----------------.  .----------------.
+| .--------------. || .--------------. || .--------------. || .--------------. || .--------------. || .--------------. |
+| |   ______     | || |  _______     | || |     _____    | || | ____   ____  | || |     ______   | || |  ____  ____  | |
+| |  |_   __ \   | || | |_   __ \    | || |    |_   _|   | || ||_  _| |_  _| | || |   .' ___  |  | || | |_  _||_  _| | |
+| |    | |__) |  | || |   | |__) |   | || |      | |     | || |  \ \   / /   | || |  / .'   \_|  | || |   \ \  / /   | |
+| |    |  ___/   | || |   |  __ /    | || |      | |     | || |   \ \ / /    | || |  | |         | || |    \ \/ /    | |
+| |   _| |_      | || |  _| |  \ \_  | || |     _| |_    | || |    \ ' /     | || |  \ `.___.'\  | || |    _|  |_    | |
+| |  |_____|     | || | |____| |___| | || |    |_____|   | || |     \_/      | || |   `._____.'  | || |   |______|   | |
+| |              | || |              | || |              | || |              | || |              | || |              | |
+| '--------------' || '--------------' || '--------------' || '--------------' || '--------------' || '--------------' |
+'----------------'  '----------------'  '----------------'  '----------------'  '----------------'  '----------------'
 EOF
 
 #Tool menu
-echo -e '\e[4mWelcome to the StakeCube Multitools '${version}' \e[24m'
+echo -e '\e[4mWelcome to the PRiVCY Multitools '${version}' \e[24m'
 echo "Please enter a number from the list and press [ENTER] to start tool"
 echo "1  - Newserver 2GB swap + IPv6 setup. REQUIRES RESTART"
 echo "2  - Newserver 8GB swap + IPv6 setup. REQUIRES RESTART"
@@ -65,7 +70,7 @@ case $start in
     #Install zip and unzip tools
     apt install zip unzip
     #Get check.sh
-    wget https://raw.githubusercontent.com/stakecube/SCC-multitool/master/check.sh -O check.sh
+    wget https://raw.githubusercontent.com/Bob-bit-PRIV/PRIV-multitool/master/check.sh -O check.sh
     chmod +x check.sh
 	#Enable IPv6
 	sleep 2
@@ -103,7 +108,7 @@ case $start in
     #Install zip and unzip tools
     apt install zip unzip
     #Get check.sh
-    wget https://raw.githubusercontent.com/stakecube/SCC-multitool/master/check.sh -O check.sh
+    wget https://raw.githubusercontent.com/Bob-bit-PRIV/PRIV-multitool/master/check.sh -O check.sh
     chmod +x check.sh
 	#Enable IPv6
 	sleep 2
@@ -186,7 +191,7 @@ case $start in
 	echo "protx update_service proTxHash ipAndPort operatorKey (operatorPayoutAddress feeSourceAddress)"
 	echo "Chain repair tool finished"
 	exit
-	;;	
+	;;
 	6) echo "Starting Removal tool"
 	echo "Checking home directory for MN alias's"
 	ls /home
@@ -379,8 +384,8 @@ else
 	echo "externalip=$ipadd:$port" >> $coinname.conf
 fi
 echo "masternodeblsprivkey=$key" >> $coinname.conf
-echo "addnode=173.249.9.78" >> $coinname.conf
-echo "addnode=173.249.9.77" >> $coinname.conf
+echo "addnode=178.62.221.188" >> $coinname.conf
+echo "addnode=134.209.151.86" >> $coinname.conf
 echo "$coinname conf file created"
 #Set permisions and firewall rules
 echo "Setting permissions and firewall rules"
