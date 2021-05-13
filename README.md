@@ -1,7 +1,7 @@
-SCC Multi Tool script tested on Linux 18.04
+PRIV Multi Tool script tested on Linux 18.04
 (Automatic IPv6 configuration is valid only for U18 contabo servers)
 
-SCC MN install guide
+PRIV MN install guide
 
 Quick guide
 https://stakecube.info/stakecubecoin-dip3-masternode-setup-quick-guide/
@@ -10,13 +10,13 @@ Full guide
 https://stakecube.info/stakecubecoin-dip3-masternode-setup-full-guide/
 
 
-Commands to install sccmultitool.sh
+Commands to install privmultitool.sh
 
-wget https://raw.githubusercontent.com/stakecube/SCC-multitool/master/sccmultitool.sh
+wget https://raw.githubusercontent.com/Bob-bit-PRIV/PRiVCY-multitool/master/privmultitool.sh
 
-chmod +x sccmultitool.sh
+chmod +x privmultitool.sh
 
-./sccmultitool.sh
+./privmultitool.sh
 
 
 New server note
@@ -29,7 +29,7 @@ To run multiple MN's on one server you will need to use the IPv6 option when pro
 
 Masternode install note
 
-Alias = Name of your MN, Must all be in lower case with no spaces or special characters and also include "scc" in the name for multi tools
+Alias = Name of your MN, Must all be in lower case with no spaces or special characters and also include "priv" in the name for multi tools
 
 secret key= get this from your control wallets console using the command
 
@@ -37,15 +37,15 @@ bls generate
 
 note this info and enter carefully
 
-Port = Default port is 40000 and is set for you
+Port = Default port is 40400 and is set for you
 
-RPCport = Default RPCport is 39999 use unique for multinode
+RPCport = Default RPCport is 40401 use unique for multinode
 
 
 Check.sh instructions (This will be replaced with the health check and repair tool soon)
 
 Updated check.sh file for new commands if you are using an older version of this script
-wget https://github.com/stakecube/SCC-multitool/blob/master/check.sh
+wget https://raw.githubusercontent.com/Bob-bit-PRIV/PRiVCY-multitool/master/check.sh
 
 chmod +x check.sh
 
