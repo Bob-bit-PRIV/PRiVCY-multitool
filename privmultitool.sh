@@ -4,10 +4,10 @@ version="1.0.0"
 coinname=privcy
 coinnamed=privcyd
 coinnamecli=privcy-cli
-ticker=PRIV
+ticker=priv
 coindir=privcycore
-binaries='https://github.com/Bob-bit-PRIV/PRiVCY/releases/download/v1.0.0/priv-1.0.0-ubuntu18.zip'
-snapshot='https://github.com/Bob-bit-PRIV/PRiVCY/releases/download/v1.0.0/bootstrap.zip'
+binaries='https://github.com/Bob-bit-PRIV/PRiVCY/releases/download/v0.0.0.0/priv-2.0.0-ubuntu18.zip'
+snapshot='https://github.com/Bob-bit-PRIV/PRiVCY/releases/download/v0.0.0.0/bootstrap.zip'
 port=40400
 rpcport=40401
 discord='https://discord.gg/FFUXAanN2p'
@@ -150,7 +150,7 @@ case $start in
 	for i in $(ls /home/); do
 	echo "Checking for $ticker MN's"
 	echo "found $i..."
-	if [[ $i == *scc* ]]
+	if [[ $i == *${ticker}* ]]
 	then
 	echo "Restarting $i.."
 	systemctl restart $i
@@ -224,7 +224,7 @@ case $start in
 			do
 			echo "Checking for $ticker MN's"
 			echo "found $i..."
-			if [[ $i == *scc* ]]
+			if [[ $i == *${ticker}* ]]
 			then
 				echo "${stopstart}ing $i.."
 				systemctl $stopstart $i
@@ -247,7 +247,7 @@ case $start in
 echo "Checking home directory for MN alias's"
 ls /home
 echo "Above are the alias names for installed MN's"
-echo -e '\e[4mPlease enter MN alias. Example sccmn3\e[24m'
+echo -e '\e[4mPlease enter MN alias. Example privmn3\e[24m'
 echo "To use other tools you must include $ticker in alias"
 read alias
 echo -e '\e[4mEnter BLS secret key\e[24m'
