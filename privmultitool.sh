@@ -6,8 +6,8 @@ coinnamed=privcyd
 coinnamecli=privcy-cli
 ticker=priv
 coindir=privcycore
-binaries='https://github.com/Bob-bit-PRIV/PRiVCY/releases/download/v0.0.0.0/priv-2.0.0-ubuntu18.zip'
-snapshot='https://github.com/Bob-bit-PRIV/PRiVCY/releases/download/v0.0.0.0/bootstrap.zip'
+binaries='https://github.com/Bob-bit-PRIV/PRiVCY/releases/download/v2.0.0/privcy-all-2.0.0.0-ubuntu18.zip'
+snapshot='https://github.com/Bob-bit-PRIV/PRiVCY/releases/download/v2.0.0/bootstrap.zip'
 port=40400
 rpcport=40401
 discord='https://discord.gg/FFUXAanN2p'
@@ -42,7 +42,6 @@ echo "5  - Chain/PoSe maintenance tool (single ${ticker} node)"
 echo "6  - Remove MasterNode"
 echo "7  - Masternode install"
 echo "8  - Masternode stop/start/restart (stop/start/restart all ${ticker} nodes)"
-echo "9  - Check health and repair (all ${ticker} nodes)- COMING SOON!"
 echo "0  - Exit"
 echo ""
 read -p "> " start
@@ -237,12 +236,8 @@ case $start in
 	fi
 	echo "Wallet update tool finished"
 	exit
-    ;;
-	9) echo "Starting health check and repair tool"
-	echo "Tool coming soon! Now closing.."
-	exit
-    ;;
-    esac
+    	;;
+esac
 #get user input alias and bind set varible#
 echo "Checking home directory for MN alias's"
 ls /home
@@ -384,8 +379,8 @@ else
 	echo "externalip=$ipadd:$port" >> $coinname.conf
 fi
 echo "masternodeblsprivkey=$key" >> $coinname.conf
-echo "addnode=178.62.221.188" >> $coinname.conf
-echo "addnode=134.209.151.86" >> $coinname.conf
+echo "addnode=148.251.69.18:40400" >> $coinname.conf
+echo "addnode=148.251.140.168:40400" >> $coinname.conf
 echo "$coinname conf file created"
 #Set permisions and firewall rules
 echo "Setting permissions and firewall rules"
