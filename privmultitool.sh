@@ -77,6 +77,7 @@ case $start in
 	sysctl -q -p
 	echo 0 > /proc/sys/net/ipv6/conf/all/disable_ipv6
 	sed -i "s/#//" /etc/netplan/01-netcfg.yaml
+	sed -i '1{/^$/d}' /etc/netplan/01-netcfg.yaml
 	netplan generate
 	netplan apply
 	sleep 5
@@ -115,6 +116,7 @@ case $start in
 	sysctl -q -p
 	echo 0 > /proc/sys/net/ipv6/conf/all/disable_ipv6
 	sed -i "s/#//" /etc/netplan/01-netcfg.yaml
+	sed -i '1{/^$/d}' /etc/netplan/01-netcfg.yaml
 	netplan generate
 	netplan apply
 	sleep 5
@@ -130,6 +132,7 @@ case $start in
 	sysctl -q -p
 	echo 0 > /proc/sys/net/ipv6/conf/all/disable_ipv6
 	sed -i "s/#//" /etc/netplan/01-netcfg.yaml
+	sed -i '1{/^$/d}' /etc/netplan/01-netcfg.yaml
 	netplan generate
 	netplan apply
 	sleep 5
